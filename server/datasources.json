@@ -2,15 +2,8 @@
   "db": {
     "name": "db",
     "connector": "memory"
-  },
+  },  
   "localmongo": {
-    "host": "",
-    "port": 0,
-    "url": "mongodb://127.0.0.1:27017/WeaConPi-WeaPer",
-    "database": "",
-    "password": "password",
-    "name": "localmongo",
-    "user": "admin",
     "connector": "mongodb"
   }
 }
