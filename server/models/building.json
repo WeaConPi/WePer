@@ -1,0 +1,29 @@
+{
+  "name": "building",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "info": {
+      "type": "string"
+    },
+    "address": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "addresses": {
+      "type": "hasOne",
+      "model": "address",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
