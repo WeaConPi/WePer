@@ -42,5 +42,17 @@
   "building": {
     "dataSource": "localmongo",
     "public": true
+  },
+  "day": {
+    "dataSource": "localmongo",
+    "public": true
+  },
+  "hour": {
+    "dataSource": "localmongo",
+    "public": true
+  },
+  "sensor": {
+    "dataSource": "localmongo",
+    "public": false
   }
 }

@@ -1,26 +1,21 @@
 {
-  "name": "building",
+  "name": "hour",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "name": {
-      "type": "string"
-    },
-    "info": {
-      "type": "string"
-    },
-    "address":{
-      "type":"address"
+    "number": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],
   "relations": {
-    "days": {
+    "sensors": {
       "type": "hasMany",
-      "model": "day",
+      "model": "sensor",
       "foreignKey": ""
     }
   },

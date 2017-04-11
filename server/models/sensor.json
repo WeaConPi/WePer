@@ -1,0 +1,34 @@
+{
+  "name": "sensor",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "unit": {
+      "type": "string",
+      "required": false
+    },
+    "value": {
+      "type": "number",
+      "required": false
+    },
+    "sensor_name": {
+      "type": "string",
+      "required": false
+    },
+    "sensor_type": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
