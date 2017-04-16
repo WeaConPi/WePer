@@ -2,13 +2,11 @@
   "name": "sensor",
   "base": "PersistedModel",
   "idInjection": true,
-  "options": {
-    "validateUpsert": true
-  },
+  "options": {},
   "properties": {
     "type": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "unit": {
       "type": "string",

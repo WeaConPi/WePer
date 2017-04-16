@@ -9,15 +9,15 @@
     "number": {
       "type": "number",
       "required": true
+    },
+    "sensors": {
+      "type": ["sensor"],
+      "required": false
     }
   },
   "validations": [],
   "relations": {
-    "sensors": {
-      "type": "hasMany",
-      "model": "sensor",
-      "foreignKey": ""
-    }
+
   },
   "acls": [],
   "methods": {}
