@@ -1,0 +1,23 @@
+{
+  "name": "forecast",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "temperature": {
+      "type": "number"
+    },
+    "pressure": {
+      "type": "number"
+    },
+    "humidity": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

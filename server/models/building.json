@@ -12,8 +12,8 @@
     "info": {
       "type": "string"
     },
-    "address":{
-      "type":"address"
+    "address": {
+      "type": "address"
     }
   },
   "validations": [],

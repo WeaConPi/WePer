@@ -54,5 +54,13 @@
   "sensor": {
     "dataSource": "localmongo",
     "public": false
+  },
+  "prediction": {
+    "dataSource": "localmongo",
+    "public": false
+  },
+  "forecast": {
+    "dataSource": "localmongo",
+    "public": false
   }
 }

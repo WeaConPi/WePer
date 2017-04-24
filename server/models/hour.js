@@ -1,9 +1,9 @@
 "use strict";
-
+var request = require("request")
 var app = require("../server");
-
-module.exports = function(Hour) {
-  Hour.measurement = function(buildingId, sensorData, cb) {
+var host = process.env.weacore || "http://localhost:4000"
+module.exports = function (Hour) {
+  Hour.measurement = function (buildingId, sensorData, cb) {
     const today = new Date().toDateString();
     app.models.Day.findOne(
       {
@@ -100,8 +100,14 @@ function pushSensor(currentHourObj, sensorData, cb) {
     currentHourObj.id,
     currentHourObj,
     (err, data) => {
-      if (data) {
+      if (data && sensorData.type === 'Temperature') {
         console.log("Push sensor successfull");
+        console.log(data.id)
+        request.get(host + "/measurement-hook?hourId=" + data.id,
+          (error, res, body) => {
+            console.log("Sensor insert hook trigger  hour id " + data.id)
+            return;
+          });
         cb(null, "Sensor pushed successfully");
       } else {
         console.log("Error pushing sensor data to hour");

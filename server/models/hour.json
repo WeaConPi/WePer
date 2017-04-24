@@ -11,14 +11,22 @@
       "required": true
     },
     "sensors": {
-      "type": ["sensor"],
+      "type": [
+        "sensor"
+      ],
+      "required": false
+    },
+    "prediction": {
+      "type": "prediction",
+      "required": false
+    },
+    "forecast": {
+      "type": "forecast",
       "required": false
     }
   },
   "validations": [],
-  "relations": {
-
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

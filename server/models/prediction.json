@@ -1,0 +1,23 @@
+{
+  "name": "prediction",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "heat": {
+      "type": "number"
+    },
+    "blinders": {
+      "type": "boolean"
+    },
+    "windows": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
