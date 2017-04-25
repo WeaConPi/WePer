@@ -10,7 +10,7 @@
       "type": "number"
     },
     "blinders": {
-      "type": "boolean"
+      "type": "number"
     },
     "windows": {
       "type": "number"
