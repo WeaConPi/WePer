@@ -4,12 +4,13 @@ var app = require("../server");
 var host = process.env.weacore || "http://localhost:4000"
 module.exports = function (Hour) {
   Hour.measurement = function (buildingId, sensorData, cb) {
-    const today = new Date().toDateString();
+    const today = new Date();
+    today.setHours(today.getHours()+2)
     app.models.Day.findOne(
       {
         where: {
           buildingId: buildingId,
-          date: today
+          date: today.toDateString()
         }
       },
       (err, data) => {
@@ -19,7 +20,7 @@ module.exports = function (Hour) {
         }
         if (data) {
           console.log("Found day, inserting hour" + today);
-          upsertNewHour(data.id, sensorData, cb);
+          upsertNewHour(data.id,today.getHours(), sensorData, cb);
         } else {
           app.models.Day.create(
             {
@@ -30,7 +31,7 @@ module.exports = function (Hour) {
             (err, data) => {
               if (data) {
                 console.log("Created day, insertin hour" + today);
-                upsertNewHour(data.id, sensorData, cb);
+                upsertNewHour(data.id,today.getHours(), sensorData, cb);
               } else {
                 cb("Error creating new day for building");
                 return;
@@ -50,8 +51,7 @@ module.exports = function (Hour) {
     returns: { arg: "status", type: "string" }
   });
 };
-function upsertNewHour(dayId, sensorData, cb) {
-  const currentHour = new Date().getHours();
+function upsertNewHour(dayId,currentHour, sensorData, cb) {
   app.models.Hour.findOne(
     {
       where: {
