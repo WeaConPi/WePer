@@ -24,7 +24,7 @@ module.exports = function (Hour) {
         } else {
           app.models.Day.create(
             {
-              date: today,
+              date: today.toDateString(),
               note: "",
               buildingId: buildingId
             },
